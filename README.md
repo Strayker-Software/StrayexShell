@@ -5,7 +5,7 @@ This software is able to manage simple VGA terminal out of any operating system,
 
 # Using
 
-- Download appropriate executable file from "docs" folder,
+- Download appropriate executable file from folder,
 - Use additional software listed in Makefile and build shell on your own,
 
 # Licensing
