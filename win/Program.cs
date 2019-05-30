@@ -7,12 +7,14 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Threading;
 
 namespace strayex_shell_win
 {
     class Program
     {
         public static string Path = Directory.GetCurrentDirectory();
+        public static Process[] App_list = Process.GetProcesses();
 
         static void Cmd_interpret(string[] input)
         {
@@ -79,6 +81,36 @@ namespace strayex_shell_win
                 if (Path + '\\' + input[0] == apps[i])
                 {
                     Process apk = Process.Start(apps[i]);
+
+                    // Shell will have to wait, while app will start:
+
+                    /* TODO
+                    for(int a = 0; a < App_list.Length;)
+                    {
+                        if (apk.ProcessName != App_list[a].ProcessName)
+                        {
+                            a++;
+                        }
+                        else
+                        {
+                            Thread.Sleep(1000);
+                        }
+                    }
+                    
+                    int a = 0;
+                    while ((a < App_list.Length) && (apk.ProcessName != App_list[a].ProcessName))
+                    {
+                        if (apk.ProcessName != App_list[a].ProcessName)
+                        {
+                            a++;
+                        }
+                        else
+                        {
+                            Thread.Sleep(1000);
+                        }
+                    }
+
+                    */
                     return;
                 }
             }
