@@ -7,60 +7,51 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Threading;
 
 namespace strayex_shell_win
 {
     class Program
     {
-        public static string Path = Directory.GetCurrentDirectory();
+        public static string Patha = Directory.GetCurrentDirectory();
         public static Process[] App_list = Process.GetProcesses();
+        public static string Cmd = "";
+        public static string Args = "";
 
-        static void Cmd_interpret(string[] input)
+        static void Cmd_interpret()
         {
             // First index is command, higher indexes are arguments,
             // If user proviede args for commands, that don't need them, shell will ignore them,
 
-            string[] apps = Directory.GetFiles(Path);
+            string[] apps = Directory.GetFiles(Patha);
 
             // Commands:
-            if (input[0] == "hello")
+            if (Cmd == "hello")
             {
                 // Say hi to user :)
                 Console.WriteLine("Hello user! :D");
                 return;
             }
-            else if (input[0] == "clear")
+            else if (Cmd == "clear")
             {
                 // Clear console,
                 Console.Clear();
                 return;
             }
-            else if (input[0] == "echo") // Write something in console, if no args are given, shell will write empty line,
+            else if (Cmd == "echo") // Write something in console, if no args are given, shell will write empty line,
             {
-                int arr_length = input.Length - 1; // Subtract the command form array;
-
                 // Writes args on screen:
-                for (int i = 1; i <= arr_length; i++)
-                {
-                    if(arr_length > 1)
-                    {
-                        Console.Write(input[i]);
-                        Console.Write(' ');
-                    }
-                    else Console.Write(input[i]);
-                }
-                Console.Write('\n'); // End of Line,
+                Console.WriteLine(Args);
                 return;
             }
-            else if(input[0] == "cd")
+            else if (Cmd == "cd")
             {
-                // "cd" takes only one parameter and checks, if it exists!
-                if (input[1] != null && Directory.Exists(input[1])) Path = input[1];
+                // "cd" takes only one parameter and checks, if it exists in file system!
+                if ((Args != null) && Directory.Exists(Args)) Patha = Args;
                 else Console.WriteLine("Can't change directory, wrong argument!");
+                Console.Title = Patha + " - Strayex Shell";
                 return;
             }
-            else if(input[0] == "help")
+            else if (Cmd == "help")
             {
                 Console.WriteLine();
                 Console.WriteLine("Strayex Shell Command list:");
@@ -73,44 +64,19 @@ namespace strayex_shell_win
                 Console.WriteLine();
                 return;
             }
-            else if (input[0] == "exit") return;
+            else if (Cmd == "exit") return;
+            else if (Cmd == "") return;
 
             // Executable binaries:
             for(int i = 0; i < apps.Length; i++)
             {
-                if (Path + '\\' + input[0] == apps[i])
+                if (Patha + '\\' + Cmd == apps[i])
                 {
-                    Process apk = Process.Start(apps[i]);
+                    Process apk = Process.Start(apps[i], Args);
 
-                    // Shell will have to wait, while app will start:
+                    // Shell will have to wait, while app will exit:
+                    while (apk.HasExited == false) ;
 
-                    /* TODO
-                    for(int a = 0; a < App_list.Length;)
-                    {
-                        if (apk.ProcessName != App_list[a].ProcessName)
-                        {
-                            a++;
-                        }
-                        else
-                        {
-                            Thread.Sleep(1000);
-                        }
-                    }
-                    
-                    int a = 0;
-                    while ((a < App_list.Length) && (apk.ProcessName != App_list[a].ProcessName))
-                    {
-                        if (apk.ProcessName != App_list[a].ProcessName)
-                        {
-                            a++;
-                        }
-                        else
-                        {
-                            Thread.Sleep(1000);
-                        }
-                    }
-
-                    */
                     return;
                 }
             }
@@ -121,6 +87,7 @@ namespace strayex_shell_win
 
         static void Main(string[] args)
         {
+            Console.Title = Patha + " - Strayex Shell";
             // Standard shell's header:
             Console.WriteLine("Strayex Shell for Windows v1.0.0");
             Console.WriteLine("Copyright (c) 2019 Daniel Strayker Nowak");
@@ -130,10 +97,18 @@ namespace strayex_shell_win
             string temp = "";
             while(temp != "exit")
             {
-                Console.Write(Path + "> ");
+                Console.Title = Patha + " - Strayex Shell";
+                Console.Write(Patha + "> ");
                 temp = Console.ReadLine();
-                string[] cmd = temp.Split(' ');
-                Cmd_interpret(cmd);
+                string[] help = temp.Split(' ');
+                Cmd = help[0];
+                for (int a = 1; a < help.Length; a++)
+                {
+                    Args = Args + help[a] + ' ';
+                }
+                Cmd_interpret();
+                Cmd = "";
+                Args = "";
             }
         }
     }
