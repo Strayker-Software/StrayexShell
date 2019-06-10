@@ -71,10 +71,36 @@ namespace strayex_shell_win
             for(int i = 0; i < apps.Length; i++)
             {
                 if (Patha + '\\' + Cmd == apps[i])
-                {
-                    Process apk = Process.Start(apps[i], Args);
+                { // TODO
+                    // Start given process:
+                    var apk = Process.Start(apps[i], Args);
+                    //apk.StartInfo.RedirectStandardOutput = true;
+                    //apk.StartInfo.RedirectStandardInput = true;
+                    //apk.StartInfo.RedirectStandardError = true;
+                    //apk.StartInfo.FileName = apps[i];
+                    //apk.StartInfo.Arguments = Args;
+                    //apk.StartInfo.UseShellExecute = false;
 
-                    // Shell will have to wait, while app will exit:
+                    /*
+                    try
+                    {
+                        apk.Start();
+                    }
+                    catch (Exception)
+                    {
+                        apk = Process.Start(apps[i]);
+                    }
+                    */
+
+                    // If there's output, print it:
+                    //string output = apk.StandardOutput.ReadToEnd();
+                    //Console.Write(output);
+
+                    // If there's error, print it:
+                    //string err = apk.StandardError.ReadToEnd();
+                    //Console.Write(err);
+
+                    // And wait, while app will exit:
                     while (apk.HasExited == false) ;
 
                     return;
