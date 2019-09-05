@@ -6,13 +6,13 @@
 
 #include <cstdio>
 
-void Cmd_interpret(char cmd[])
+void Cmd_interpret(string cmd)
 {
 	// Command name is the first word, next words are args,
 	// If user proviede args for commands, that don't need them, shell will ignore them,
 
 	// Comands:
-	if (cmd == "hello") printf("Hello user! :D\n"); // Say hi to user :)
+	if (cmd == "hello") cout << "Hello user! :D" << endl; // Say hi to user :)
 
 	// TODO: Chech code on Linux with GCC!
 }
@@ -20,19 +20,17 @@ void Cmd_interpret(char cmd[])
 int main()
 {
 	// Standard shell's header:
-    printf("Strayex Shell for Linux v1.0.0\n");
-	printf("Copyright (c) 2019 Daniel Strayker Nowak\n");
-	printf("All rights reserved\n");
+    cout << "Strayex Shell for Linux v1.0.0" << endl;
+	cout << "Copyright (c) 2019 Daniel Strayker Nowak" << endl;
+	cout << "All rights reserved" << endl;
 
 	// Command routine:
-	char temp[255] = "";
+	string temp = "";
 	while (temp != "exit")
 	{
-		printf("> ");
-		scanf(temp, stdin);
+		cout << "> ";
+		cin >> temp;
 		Cmd_interpret(temp);
-
-		for (int i = 0; i < 255; i++) temp[i] = '\0';
 	}
 
     return 0;

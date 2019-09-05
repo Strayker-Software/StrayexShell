@@ -11,3 +11,7 @@ This software is able to manage simple VGA terminal out of any operating system,
 # Licensing
 
 This project is published under [MIT/X11 license](https://github.com/StraykerPL/strayex_shell/blob/master/LICENSE).
+
+# Contact
+
+If you want to contact me join [Strayex Discord server](https://discord.gg/uAEwHHp).

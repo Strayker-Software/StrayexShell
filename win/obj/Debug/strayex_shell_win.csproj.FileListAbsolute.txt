@@ -5,3 +5,10 @@ A:\Repozytoria\strayex_shell\win\obj\Debug\strayex_shell_win.csprojAssemblyRefer
 A:\Repozytoria\strayex_shell\win\obj\Debug\strayex_shell_win.csproj.CoreCompileInputs.cache
 A:\Repozytoria\strayex_shell\win\obj\Debug\strayex_shell_win.exe
 A:\Repozytoria\strayex_shell\win\obj\Debug\strayex_shell_win.pdb
+F:\Daniel\Repozytoria\strayex_shell\win\obj\Debug\strayex_shell_win.exe
+F:\Daniel\Repozytoria\strayex_shell\win\obj\Debug\strayex_shell_win.pdb
+F:\Daniel\Repozytoria\strayex_shell\win\bin\Debug\strayex_shell_win.exe.config
+F:\Daniel\Repozytoria\strayex_shell\win\bin\Debug\strayex_shell_win.exe
+F:\Daniel\Repozytoria\strayex_shell\win\bin\Debug\strayex_shell_win.pdb
+F:\Daniel\Repozytoria\strayex_shell\win\obj\Debug\strayex_shell_win.csprojAssemblyReference.cache
+F:\Daniel\Repozytoria\strayex_shell\win\obj\Debug\strayex_shell_win.csproj.CoreCompileInputs.cache
