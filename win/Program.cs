@@ -16,6 +16,16 @@ namespace strayex_shell_win
         public static Process[] App_list = Process.GetProcesses();
         public static string Cmd = "";
         public static string Args = "";
+        
+        static void DiscussFile(string FileName)
+        {
+            string Ext = FileName.SubString('.');
+            
+            if(Ext == "exe")
+            {
+                // ...
+            }
+        }
 
         static void Cmd_interpret()
         {
@@ -73,7 +83,12 @@ namespace strayex_shell_win
                 if (Patha + '\\' + Cmd == apps[i])
                 { // TODO
                     // Start given process:
-                    var apk = Process.Start(apps[i], Args);
+                    
+                    if(DiscussFile(Cmd))
+                    {
+                        var apk = Process.Start(apps[i], Args);
+                    }
+                    
                     //apk.StartInfo.RedirectStandardOutput = true;
                     //apk.StartInfo.RedirectStandardInput = true;
                     //apk.StartInfo.RedirectStandardError = true;
