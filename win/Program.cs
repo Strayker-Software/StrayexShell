@@ -17,14 +17,16 @@ namespace strayex_shell_win
         public static string Cmd = "";
         public static string Args = "";
         
-        static void DiscussFile(string FileName)
+        static string DiscussFile(string FileName)
         {
-            string Ext = FileName.SubString('.');
+            string Ext = "";
             
             if(Ext == "exe")
             {
-                // ...
+                
             }
+
+            return "";
         }
 
         static void Cmd_interpret()
@@ -81,39 +83,35 @@ namespace strayex_shell_win
             for(int i = 0; i < apps.Length; i++)
             {
                 if (Patha + '\\' + Cmd == apps[i])
-                { // TODO
+                {
                     // Start given process:
-                    
-                    if(DiscussFile(Cmd))
-                    {
-                        var apk = Process.Start(apps[i], Args);
-                    }
-                    
-                    //apk.StartInfo.RedirectStandardOutput = true;
-                    //apk.StartInfo.RedirectStandardInput = true;
-                    //apk.StartInfo.RedirectStandardError = true;
-                    //apk.StartInfo.FileName = apps[i];
-                    //apk.StartInfo.Arguments = Args;
-                    //apk.StartInfo.UseShellExecute = false;
 
-                    /*
+                    var apk = new Process();
+                    apk.StartInfo.FileName = apps[i];
+                    // If there's input, add it to process:
+                    apk.StartInfo.Arguments = Args;
+                    // Redirect streams to shell:
+                    apk.StartInfo.RedirectStandardError = true;
+                    apk.StartInfo.RedirectStandardInput = true;
+                    apk.StartInfo.RedirectStandardOutput = true;
+                    apk.StartInfo.UseShellExecute = false;
+
                     try
                     {
                         apk.Start();
                     }
-                    catch (Exception)
+                    catch (Exception a)
                     {
-                        apk = Process.Start(apps[i]);
+                        // If there's error, print it:
+                        Console.WriteLine("Error trying execute given command: " + a.Message);
+                        return;
                     }
-                    */
+
+                    apk.WaitForExit();
 
                     // If there's output, print it:
-                    //string output = apk.StandardOutput.ReadToEnd();
-                    //Console.Write(output);
-
-                    // If there's error, print it:
-                    //string err = apk.StandardError.ReadToEnd();
-                    //Console.Write(err);
+                    string output = apk.StandardOutput.ReadToEnd();
+                    if (output != "") Console.Write(output);
 
                     // And wait, while app will exit:
                     while (apk.HasExited == false) ;
@@ -136,18 +134,38 @@ namespace strayex_shell_win
 
             // Command routine:
             string temp = "";
+
+            // While program still execute:
             while(temp != "exit")
             {
+                // Set title of window:
                 Console.Title = Patha + " - Strayex Shell";
+                // Write line for command input:
                 Console.Write(Patha + "> ");
+                // Wait for command:
                 temp = Console.ReadLine();
+                // Split args and command into array:
                 string[] help = temp.Split(' ');
+                // First element of array is always command name!
                 Cmd = help[0];
+
+                // Prepare args string to add to program:
                 for (int a = 1; a < help.Length; a++)
                 {
-                    Args = Args + help[a] + ' ';
+                    if(help.Length - 1 > 1)
+                    {
+                        Args = Args + help[a] + ' ';
+                    }
+                    else
+                    {
+                        Args = Args + help[a];
+                    }
                 }
+
+                // Interpret the command:
                 Cmd_interpret();
+
+                // Clear values of executed command:
                 Cmd = "";
                 Args = "";
             }
