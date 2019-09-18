@@ -12,21 +12,23 @@ namespace strayex_shell_win
 {
     class Program
     {
-        public static string Patha = Directory.GetCurrentDirectory();
-        public static Process[] App_list = Process.GetProcesses();
-        public static string Cmd = "";
-        public static string Args = "";
+        public static string ShellPath = Directory.GetCurrentDirectory(); // Directory to work,
+        public static string Cmd = ""; // Command,
+        public static string Args = ""; // Arguments,
         
         static string DiscussFile(string FileName)
-        {
-            string Ext = "";
-            
-            if(Ext == "exe")
-            {
-                
-            }
+        { // TODO: Function to recognise files
+            int i = 0;
+            for (; FileName[i] != '.'; i++);
+            // abc.exe 3
 
-            return "";
+            string Extenstion = FileName.Substring(i + 1); // Gets extension name,
+
+            // Determine, witch file is it:
+            if (Extenstion == "exe") return "apk";
+            else if (Extenstion == "txt") return "text";
+            else if (Extenstion == "png") return "image";
+            else return "0";
         }
 
         static void Cmd_interpret()
@@ -34,7 +36,7 @@ namespace strayex_shell_win
             // First index is command, higher indexes are arguments,
             // If user proviede args for commands, that don't need them, shell will ignore them,
 
-            string[] apps = Directory.GetFiles(Patha);
+            string[] apps = Directory.GetFiles(ShellPath);
 
             // Commands:
             if (Cmd == "hello")
@@ -58,9 +60,9 @@ namespace strayex_shell_win
             else if (Cmd == "cd")
             {
                 // "cd" takes only one parameter and checks, if it exists in file system!
-                if ((Args != null) && Directory.Exists(Args)) Patha = Args;
+                if ((Args != null) && Directory.Exists(Args)) ShellPath = Args;
                 else Console.WriteLine("Can't change directory, wrong argument!");
-                Console.Title = Patha + " - Strayex Shell";
+                Console.Title = ShellPath + " - Strayex Shell";
                 return;
             }
             else if (Cmd == "help")
@@ -79,10 +81,17 @@ namespace strayex_shell_win
             else if (Cmd == "exit") return;
             else if (Cmd == "") return;
 
+            // File to open in third-party app:
+            if (DiscussFile(Cmd) == "text")
+            {
+                Process.Start("notepad.exe", ShellPath + '\\' + Cmd);
+                return;
+            }
+
             // Executable binaries:
             for(int i = 0; i < apps.Length; i++)
             {
-                if (Patha + '\\' + Cmd == apps[i])
+                if (ShellPath + '\\' + Cmd == apps[i])
                 {
                     // Start given process:
 
@@ -113,9 +122,6 @@ namespace strayex_shell_win
                     string output = apk.StandardOutput.ReadToEnd();
                     if (output != "") Console.Write(output);
 
-                    // And wait, while app will exit:
-                    while (apk.HasExited == false) ;
-
                     return;
                 }
             }
@@ -126,7 +132,7 @@ namespace strayex_shell_win
 
         static void Main(string[] args)
         {
-            Console.Title = Patha + " - Strayex Shell";
+            Console.Title = ShellPath + " - Strayex Shell";
             // Standard shell's header:
             Console.WriteLine("Strayex Shell for Windows v1.0.0");
             Console.WriteLine("Copyright (c) 2019 Daniel Strayker Nowak");
@@ -135,13 +141,13 @@ namespace strayex_shell_win
             // Command routine:
             string temp = "";
 
-            // While program still execute:
+            // While shell still execute:
             while(temp != "exit")
             {
                 // Set title of window:
-                Console.Title = Patha + " - Strayex Shell";
+                Console.Title = ShellPath + " - Strayex Shell";
                 // Write line for command input:
-                Console.Write(Patha + "> ");
+                Console.Write(ShellPath + "> ");
                 // Wait for command:
                 temp = Console.ReadLine();
                 // Split args and command into array:
@@ -165,7 +171,7 @@ namespace strayex_shell_win
                 // Interpret the command:
                 Cmd_interpret();
 
-                // Clear values of executed command:
+                // Clear values of already executed command:
                 Cmd = "";
                 Args = "";
             }
