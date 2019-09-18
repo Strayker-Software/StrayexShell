@@ -28,7 +28,7 @@ namespace strayex_shell_win
             if (Extenstion == "exe") return "apk";
             else if (Extenstion == "txt") return "text";
             else if (Extenstion == "png") return "image";
-            else return "0";
+            else return "0"; // If file is unknown, shell can't execute it!
         }
 
         static void Cmd_interpret()
@@ -61,7 +61,11 @@ namespace strayex_shell_win
             {
                 // "cd" takes only one parameter and checks, if it exists in file system!
                 if ((Args != null) && Directory.Exists(Args)) ShellPath = Args;
-                else Console.WriteLine("Can't change directory, wrong argument!");
+                else
+                {
+                    Console.WriteLine("Can't change directory, wrong argument!");
+                    return;
+                }
                 Console.Title = ShellPath + " - Strayex Shell";
                 return;
             }
@@ -74,8 +78,120 @@ namespace strayex_shell_win
                 Console.WriteLine("- clear - clears consol's screen,");
                 Console.WriteLine("- echo - write information on screen,");
                 Console.WriteLine("- cd - changes active directory,");
+                Console.WriteLine("- color - change colors of active shell session,");
                 Console.WriteLine("- exit - close shell,");
                 Console.WriteLine();
+                return;
+            }
+            else if(Cmd == "color")
+            {
+                // Change colors of active shell session:
+
+                if(Args == "help")
+                {
+                    Console.WriteLine("Strayex Shell Color Config");
+                    Console.WriteLine("This command changes colors of terminal.");
+                    Console.WriteLine("Use `color reset` to reload default terminal settings!");
+                    Console.WriteLine("Available colors set:");
+                    Console.WriteLine("- Background - Black, Blue, Green, White,");
+                    Console.WriteLine("- Font - Black, Blue, Green, White,");
+                    Console.WriteLine("Use `color <background> <font>` to change settings.");
+                    Console.WriteLine("If you will provide one argument, Strayex Shell will interpret it as background color change!");
+                    return;
+                }
+                else if(Args == "reset")
+                {
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("Reset of color settings!");
+                    return;
+                }
+
+                string[] Colors = Args.Split(' ');
+
+                // If user wants rainbow in shell...
+                // TODO: Bug here!
+                if(Colors.Length > 2)
+                {
+                    Console.WriteLine("Too many colors given!");
+                    return;
+                }
+                else if(Colors.Length == 2)
+                { // If background and font color are provided:
+                    // Check background color:
+                    switch (Colors[0])
+                    {
+                        case "Black":
+                            Console.BackgroundColor = ConsoleColor.Black;
+                            break;
+
+                        case "Blue":
+                            Console.BackgroundColor = ConsoleColor.Blue;
+                            break;
+
+                        case "Green":
+                            Console.BackgroundColor = ConsoleColor.Green;
+                            break;
+
+                        case "White":
+                            Console.BackgroundColor = ConsoleColor.White;
+                            break;
+
+                        default:
+                            Console.WriteLine("Can't determine color: " + Colors[0]);
+                            break;
+                    }
+
+                    // Check font color:
+                    switch (Colors[1])
+                    {
+                        case "Black":
+                            Console.ForegroundColor = ConsoleColor.Black;
+                            break;
+
+                        case "Blue":
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            break;
+
+                        case "Green":
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            break;
+
+                        case "White":
+                            Console.ForegroundColor = ConsoleColor.White;
+                            break;
+
+                        default:
+                            Console.WriteLine("Can't determine color: " + Colors[0]);
+                            break;
+                    }
+                }
+                else if(Colors.Length == 1)
+                { // Check background color only:
+                    switch (Colors[0])
+                    {
+                        case "Black":
+                            Console.BackgroundColor = ConsoleColor.Black;
+                            break;
+
+                        case "Blue":
+                            Console.BackgroundColor = ConsoleColor.Blue;
+                            break;
+
+                        case "Green":
+                            Console.BackgroundColor = ConsoleColor.Green;
+                            break;
+
+                        case "White":
+                            Console.BackgroundColor = ConsoleColor.White;
+                            break;
+
+                        default:
+                            Console.WriteLine("Can't determine color: " + Colors[0]);
+                            break;
+                    }
+                }
+
                 return;
             }
             else if (Cmd == "exit") return;
