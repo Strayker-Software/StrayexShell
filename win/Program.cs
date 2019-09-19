@@ -14,12 +14,30 @@ namespace strayex_shell_win
     {
         public static string ShellPath = Directory.GetCurrentDirectory(); // Directory to work,
         public static string Cmd = ""; // Command,
-        public static string Args = ""; // Arguments,
+        public static string[] Args = new string[50]; // Arguments,
+
+        // Counts, how much times the given char appears in string:
+        static int CountChar(char x, string y)
+        {
+            int Long = y.Length;
+            int Counter = 0;
+
+            for(int i = 0; i < Long; i++) if (y[i] == x) Counter++;
+
+            return Counter;
+        }
         
         static string DiscussFile(string FileName)
         { // TODO: Function to recognise files
             int i = 0;
-            for (; FileName[i] != '.'; i++);
+            try
+            {
+                for (; FileName[i] != '.'; i++) ;
+            }
+            catch (Exception)
+            {
+                return "0";
+            }
             // abc.exe 3
 
             string Extenstion = FileName.Substring(i + 1); // Gets extension name,
@@ -31,7 +49,7 @@ namespace strayex_shell_win
             else return "0"; // If file is unknown, shell can't execute it!
         }
 
-        static void Cmd_interpret()
+        static void CmdInterpreter()
         {
             // First index is command, higher indexes are arguments,
             // If user proviede args for commands, that don't need them, shell will ignore them,
@@ -54,13 +72,30 @@ namespace strayex_shell_win
             else if (Cmd == "echo") // Write something in console, if no args are given, shell will write empty line,
             {
                 // Writes args on screen:
-                Console.WriteLine(Args);
+
+                int ArgsLen = Args.Length;
+
+                if (ArgsLen == 0) Console.WriteLine();
+                else if(ArgsLen == 1)
+                {
+                    Console.WriteLine(Args[0]);
+                }
+                else
+                {
+                    for (int i = 0; i < ArgsLen; i++)
+                    {
+                        if (i != ArgsLen - 1) Console.Write(Args[i] + ' ');
+                        else Console.Write(Args[i]);
+                    }
+                    Console.WriteLine();
+                }
+
                 return;
             }
             else if (Cmd == "cd")
             {
                 // "cd" takes only one parameter and checks, if it exists in file system!
-                if ((Args != null) && Directory.Exists(Args)) ShellPath = Args;
+                if ((Args != null) && Directory.Exists(Args[0])) ShellPath = Args[0];
                 else
                 {
                     Console.WriteLine("Can't change directory, wrong argument!");
@@ -87,7 +122,13 @@ namespace strayex_shell_win
             {
                 // Change colors of active shell session:
 
-                if(Args == "help")
+                if (Args[0] == "")
+                {
+                    Console.WriteLine("No arguments given! Type `color help` for info!");
+                    return;
+                }
+
+                if(Args[0] == "help")
                 {
                     Console.WriteLine("Strayex Shell Color Config");
                     Console.WriteLine("This command changes colors of terminal.");
@@ -99,102 +140,98 @@ namespace strayex_shell_win
                     Console.WriteLine("If you will provide one argument, Strayex Shell will interpret it as background color change!");
                     return;
                 }
-                else if(Args == "reset")
+                else if(Args[0] == "reset")
                 {
-                    Console.BackgroundColor = ConsoleColor.Black;
-                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.ResetColor();
                     Console.WriteLine("Reset of color settings!");
                     return;
                 }
 
-                string[] Colors = Args.Split(' ');
-
                 // If user wants rainbow in shell...
-                // TODO: Bug here!
-                if(Colors.Length > 2)
+                if(Args[2] != "")
                 {
                     Console.WriteLine("Too many colors given!");
                     return;
                 }
-                else if(Colors.Length == 2)
+                else if(Args[0] != "" && Args[1] != "")
                 { // If background and font color are provided:
                     // Check background color:
-                    switch (Colors[0])
+                    switch (Args[0].ToLower())
                     {
-                        case "Black":
+                        case "black":
                             Console.BackgroundColor = ConsoleColor.Black;
                             break;
 
-                        case "Blue":
+                        case "blue":
                             Console.BackgroundColor = ConsoleColor.Blue;
                             break;
 
-                        case "Green":
+                        case "green":
                             Console.BackgroundColor = ConsoleColor.Green;
                             break;
 
-                        case "White":
+                        case "white":
                             Console.BackgroundColor = ConsoleColor.White;
                             break;
 
                         default:
-                            Console.WriteLine("Can't determine color: " + Colors[0]);
+                            Console.WriteLine("Can't determine color: " + Args[0]);
                             break;
                     }
 
                     // Check font color:
-                    switch (Colors[1])
+                    switch (Args[1].ToLower())
                     {
-                        case "Black":
+                        case "black":
                             Console.ForegroundColor = ConsoleColor.Black;
                             break;
 
-                        case "Blue":
+                        case "blue":
                             Console.ForegroundColor = ConsoleColor.Blue;
                             break;
 
-                        case "Green":
+                        case "green":
                             Console.ForegroundColor = ConsoleColor.Green;
                             break;
 
-                        case "White":
+                        case "white":
                             Console.ForegroundColor = ConsoleColor.White;
                             break;
 
                         default:
-                            Console.WriteLine("Can't determine color: " + Colors[0]);
+                            Console.WriteLine("Can't determine color: " + Args[0]);
                             break;
                     }
                 }
-                else if(Colors.Length == 1)
+                else if(Args[0] != "")
                 { // Check background color only:
-                    switch (Colors[0])
+                    switch (Args[0].ToLower())
                     {
-                        case "Black":
+                        case "black":
                             Console.BackgroundColor = ConsoleColor.Black;
                             break;
 
-                        case "Blue":
+                        case "blue":
                             Console.BackgroundColor = ConsoleColor.Blue;
                             break;
 
-                        case "Green":
+                        case "green":
                             Console.BackgroundColor = ConsoleColor.Green;
                             break;
 
-                        case "White":
+                        case "white":
                             Console.BackgroundColor = ConsoleColor.White;
                             break;
 
                         default:
-                            Console.WriteLine("Can't determine color: " + Colors[0]);
+                            Console.WriteLine("Can't determine color: " + Args[0]);
                             break;
                     }
                 }
 
                 return;
             }
-            else if (Cmd == "exit") return;
+            else if (Cmd == "exit") Environment.Exit(0);
             else if (Cmd == "") return;
 
             // File to open in third-party app:
@@ -213,8 +250,12 @@ namespace strayex_shell_win
 
                     var apk = new Process();
                     apk.StartInfo.FileName = apps[i];
+
                     // If there's input, add it to process:
-                    apk.StartInfo.Arguments = Args;
+                    string Temp = "";
+                    for (int j = 0; j < Args.Length; j++) Temp += Args[j];
+                    apk.StartInfo.Arguments = Temp;
+
                     // Redirect streams to shell:
                     apk.StartInfo.RedirectStandardError = true;
                     apk.StartInfo.RedirectStandardInput = true;
@@ -271,25 +312,21 @@ namespace strayex_shell_win
                 // First element of array is always command name!
                 Cmd = help[0];
 
-                // Prepare args string to add to program:
+                // Prepare args strings to add to shell:
+                int b = 0;
+                for (; b < 50; b++) Args[b] = "";
+
                 for (int a = 1; a < help.Length; a++)
                 {
-                    if(help.Length - 1 > 1)
-                    {
-                        Args = Args + help[a] + ' ';
-                    }
-                    else
-                    {
-                        Args = Args + help[a];
-                    }
+                    Args[a - 1] = help[a];
                 }
 
                 // Interpret the command:
-                Cmd_interpret();
+                CmdInterpreter();
 
                 // Clear values of already executed command:
                 Cmd = "";
-                Args = "";
+                for (b = 0; b < 50; b++) Args[b] = "";
             }
         }
     }
