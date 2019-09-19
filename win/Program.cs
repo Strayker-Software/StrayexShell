@@ -16,7 +16,7 @@ namespace strayex_shell_win
         public static string Cmd = ""; // Command,
         public static string[] Args = new string[50]; // Arguments,
 
-        // Counts, how much times the given char appears in string:
+        // Counts, how much times the given char appears in string, maybe will be usefull in future:
         static int CountChar(char x, string y)
         {
             int Long = y.Length;
@@ -28,25 +28,52 @@ namespace strayex_shell_win
         }
         
         static string DiscussFile(string FileName)
-        { // TODO: Function to recognise files
-            int i = 0;
-            try
+        {
+            // Is it only executable filename or filename with extenstion?
+            if(FileName.Contains("."))
             {
-                for (; FileName[i] != '.'; i++) ;
+                // With extenstion!
+
+                int i = 0;
+                try
+                {
+                    for (; FileName[i] != '.'; i++) ;
+                }
+                catch (Exception)
+                {
+                    return "0"; // If file is unknown, shell can't execute it!
+                }
+
+                string Extenstion = FileName.Substring(i + 1); // Gets extension name,
+
+                // Determine, witch file is it:
+                if (Extenstion == "exe") return "apk";
+                else if (Extenstion == "txt") return "text";
+                else if (Extenstion == "png") return "image";
+                else return "0"; // If file is unknown, shell can't execute it!
             }
-            catch (Exception)
+            else
             {
-                return "0";
+                // Just filename! So shell have to find app in workdir:
+                // TODO: Some fun with it!
+                string[] Apps = Directory.GetFileSystemEntries(ShellPath);
+
+                for (int i = 0; i < Apps.Length; i++)
+                {
+                    //string Temp = 
+                    //if (Temp == ShellPath + '\\' + FileName)
+                   // {
+                    //    return "";
+                   // }
+                   // else
+                   // {
+                        // If shell can't find the file, it can't execute it!
+                   //     return "0";
+                   // }
+                }
             }
-            // abc.exe 3
 
-            string Extenstion = FileName.Substring(i + 1); // Gets extension name,
-
-            // Determine, witch file is it:
-            if (Extenstion == "exe") return "apk";
-            else if (Extenstion == "txt") return "text";
-            else if (Extenstion == "png") return "image";
-            else return "0"; // If file is unknown, shell can't execute it!
+            return "0";
         }
 
         static void CmdInterpreter()
