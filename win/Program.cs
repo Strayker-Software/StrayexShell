@@ -27,49 +27,31 @@ namespace strayex_shell_win
             return Counter;
         }
         
+        // Checks file extension, returns specific file type or "0" string, if can't recognise file:
         static string DiscussFile(string FileName)
-        {
+        { // TODO: Expand files support!
             // Is it only executable filename or filename with extenstion?
             if(FileName.Contains("."))
             {
-                // With extenstion!
-
-                int i = 0;
-                try
-                {
-                    for (; FileName[i] != '.'; i++) ;
-                }
-                catch (Exception)
-                {
-                    return "0"; // If file is unknown, shell can't execute it!
-                }
-
-                string Extenstion = FileName.Substring(i + 1); // Gets extension name,
+                // With extension!
 
                 // Determine, witch file is it:
-                if (Extenstion == "exe") return "apk";
-                else if (Extenstion == "txt") return "text";
-                else if (Extenstion == "png") return "image";
+                if (FileName.EndsWith(".exe")) return "apk";
+                else if (FileName.EndsWith(".txt")) return "text";
+                else if (FileName.EndsWith(".png")) return "image";
                 else return "0"; // If file is unknown, shell can't execute it!
             }
             else
             {
                 // Just filename! So shell have to find app in workdir:
-                // TODO: Some fun with it!
                 string[] Apps = Directory.GetFileSystemEntries(ShellPath);
 
                 for (int i = 0; i < Apps.Length; i++)
                 {
-                    //string Temp = 
-                    //if (Temp == ShellPath + '\\' + FileName)
-                   // {
-                    //    return "";
-                   // }
-                   // else
-                   // {
-                        // If shell can't find the file, it can't execute it!
-                   //     return "0";
-                   // }
+                    if(Apps[i].Contains(ShellPath + '\\' + FileName))
+                    {
+                        if (Apps[i].EndsWith(".txt")) return "text";
+                    }
                 }
             }
 
