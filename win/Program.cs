@@ -15,6 +15,7 @@ namespace strayex_shell_win
         public static string ShellPath = Directory.GetCurrentDirectory(); // Directory to work,
         public static string Cmd = ""; // Command,
         public static string[] Args = new string[50]; // Arguments,
+        public static ShellVariable[] Vars = new ShellVariable[100]; // Max 100 shell variables,
 
         // Counts, how much times the given char appears in string, maybe will be usefull in future:
         static int CountChar(char x, string y)
@@ -85,7 +86,7 @@ namespace strayex_shell_win
                 int ArgsLen = Args.Length;
 
                 if (ArgsLen == 0) Console.WriteLine();
-                else if(ArgsLen == 1)
+                else if (ArgsLen == 1)
                 {
                     Console.WriteLine(Args[0]);
                 }
@@ -123,11 +124,12 @@ namespace strayex_shell_win
                 Console.WriteLine("- echo - write information on screen,");
                 Console.WriteLine("- cd - changes active directory,");
                 Console.WriteLine("- color - change colors of active shell session,");
+                Console.WriteLine("- set - shows list of shell variables and sets new,");
                 Console.WriteLine("- exit - close shell,");
                 Console.WriteLine();
                 return;
             }
-            else if(Cmd == "color")
+            else if (Cmd == "color")
             {
                 // Change colors of active shell session:
 
@@ -137,7 +139,7 @@ namespace strayex_shell_win
                     return;
                 }
 
-                if(Args[0] == "help")
+                if (Args[0] == "help")
                 {
                     Console.WriteLine("Strayex Shell Color Config");
                     Console.WriteLine("This command changes colors of terminal.");
@@ -149,7 +151,7 @@ namespace strayex_shell_win
                     Console.WriteLine("If you will provide one argument, Strayex Shell will interpret it as background color change!");
                     return;
                 }
-                else if(Args[0] == "reset")
+                else if (Args[0] == "reset")
                 {
                     Console.ResetColor();
                     Console.WriteLine("Reset of color settings!");
@@ -157,12 +159,12 @@ namespace strayex_shell_win
                 }
 
                 // If user wants rainbow in shell...
-                if(Args[2] != "")
+                if (Args[2] != "")
                 {
                     Console.WriteLine("Too many colors given!");
                     return;
                 }
-                else if(Args[0] != "" && Args[1] != "")
+                else if (Args[0] != "" && Args[1] != "")
                 { // If background and font color are provided:
                     // Check background color:
                     switch (Args[0].ToLower())
@@ -212,7 +214,7 @@ namespace strayex_shell_win
                             break;
                     }
                 }
-                else if(Args[0] != "")
+                else if (Args[0] != "")
                 { // Check background color only:
                     switch (Args[0].ToLower())
                     {
@@ -237,6 +239,47 @@ namespace strayex_shell_win
                             break;
                     }
                 }
+
+                return;
+            }
+            else if (Cmd == "set")
+            {
+                if (Args[0] == "help")
+                { // Show help:
+                    Console.WriteLine("Strayex Shell variables command");
+                    Console.WriteLine("- set help - shows this hints,");
+                    Console.WriteLine("- set <name> <value> - creates new var in active shell session,");
+                    Console.WriteLine("- set ! <name> - deletes created var,");
+                    Console.WriteLine("- set list - shows list of all vars in active shell session,");
+                }
+                else if (Args[0] != "")
+                { // None args:
+                    Console.WriteLine("No arguments! Check 'set help' for instructions!");
+                }
+                else if(Args[0] != "" && Args[1] != "")
+                { // Sets new var:
+                    // TODO: Determine integer or string!
+                    var a = new ShellVariable(Args[0], Args[1]);
+                }
+                else if(Args[0] == "!" && Args[1] != "")
+                { // Deletes var:
+
+                }
+                else if(Args[0] == "list")
+                { // Shows list of vars:
+                    for (int i = 0; i < Vars.Length; i++)
+                    {
+                        if(Vars[i].CheckType())
+                        {
+                            Console.WriteLine(Vars[i].GetName() + " - " + Vars[i].GetVarString());
+                        }
+                        else
+                        {
+                            Console.WriteLine(Vars[i].GetName() + " - " + Vars[i].GetVarInt());
+                        }
+                    }
+                }
+                else Console.WriteLine("Wrong command arguments! Check 'set help'!");
 
                 return;
             }
