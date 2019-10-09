@@ -251,32 +251,73 @@ namespace strayex_shell_win
                     Console.WriteLine("- set <name> <value> - creates new var in active shell session,");
                     Console.WriteLine("- set ! <name> - deletes created var,");
                     Console.WriteLine("- set list - shows list of all vars in active shell session,");
+                    Console.WriteLine("Shell recognise two types of vars - string and integer.");
+                    Console.WriteLine("When declaring integer var before <value> data place dot '.'.");
+                    Console.WriteLine("For example: declaring string var: 'set SomeText Hello!',");
+                    Console.WriteLine("declaring integer var: 'set SomeInt .123'");
                 }
-                else if (Args[0] != "")
+                else if (Args[0] == "")
                 { // None args:
                     Console.WriteLine("No arguments! Check 'set help' for instructions!");
                 }
                 else if(Args[0] != "" && Args[1] != "")
                 { // Sets new var:
-                    // TODO: Determine integer or string!
-                    var a = new ShellVariable(Args[0], Args[1]);
+                    ShellVariable a;
+
+                    // If value is integer:
+                    if (Args[1].StartsWith("."))
+                    {
+                        a = new ShellVariable(Args[0], Convert.ToInt32(Args[1]));
+                    }
+                    else
+                    { // If value is string:
+                        a = new ShellVariable(Args[0], Args[1]);
+                    }
+
+                    for(int i = 0; i < Vars.Length; i++)
+                    {
+                        if (Vars[i] == null)
+                        {
+                            Vars[i] = a;
+                            return;
+                        }
+                        else i++;
+                    }
                 }
                 else if(Args[0] == "!" && Args[1] != "")
                 { // Deletes var:
-
+                    for(int i = 0; i < Vars.Length; i++)
+                    {
+                        if(Args[0] == Vars[i].GetName())
+                        {
+                            for(int a = i; a < Vars.Length; a++) Vars[a] = Vars[a + 1];
+                        }
+                    }
                 }
                 else if(Args[0] == "list")
                 { // Shows list of vars:
-                    for (int i = 0; i < Vars.Length; i++)
+                    // Checks if there are any vars in activ shell session:
+                    if(Vars[0] != null)
                     {
-                        if(Vars[i].CheckType())
+                        for (int i = 0; i < Vars.Length; i++)
                         {
-                            Console.WriteLine(Vars[i].GetName() + " - " + Vars[i].GetVarString());
+                            if (Vars[i] != null)
+                            {
+                                if (Vars[i].CheckType())
+                                {
+                                    Console.WriteLine(Vars[i].GetName() + " - " + Vars[i].GetVarString());
+                                }
+                                else
+                                {
+                                    Console.WriteLine(Vars[i].GetName() + " - " + Vars[i].GetVarInt());
+                                }
+                            }
+                            else i++;
                         }
-                        else
-                        {
-                            Console.WriteLine(Vars[i].GetName() + " - " + Vars[i].GetVarInt());
-                        }
+                    }
+                    else
+                    { // Nothing here!
+                        Console.WriteLine("There are no variables in active shell session!");
                     }
                 }
                 else Console.WriteLine("Wrong command arguments! Check 'set help'!");
