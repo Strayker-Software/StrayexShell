@@ -29,10 +29,10 @@ namespace strayex_shell_win
         }
 
         // If given value is empty, then this variable is of another type:
-        public bool CheckType()
+        public string CheckType()
         {
-            if (ValueS == "") return true;
-            else return false;
+            if (ValueS == "") return "int";
+            else return "str";
         }
 
         // Returns name of var:

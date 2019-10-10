@@ -83,21 +83,70 @@ namespace strayex_shell_win
             {
                 // Writes args on screen:
 
-                int ArgsLen = Args.Length;
+                int ArgsLen = 0;
+                for (int i = 0; i < Args.Length; i++)
+                {
+                    if (Args[i] != "") ArgsLen++;
+                }
 
                 if (ArgsLen == 0) Console.WriteLine();
                 else if (ArgsLen == 1)
                 {
-                    Console.WriteLine(Args[0]);
+                    // Check if argument is variable, then print it's value:
+                    if(Args[0].StartsWith("$"))
+                    {
+                        Args[0] = Args[0].Substring(1);
+
+                        for(int i = 0; i < Vars.Length; i++)
+                        {
+                            if(Vars[i] != null && Args[0] == Vars[i].GetName())
+                            {
+                                if(Vars[i].CheckType() == "str") Console.WriteLine(Vars[i].GetVarString());
+                                else Console.WriteLine(Vars[i].GetVarInt());
+                            }
+                        }
+                    }
+                    else Console.WriteLine(Args[0]);
                 }
                 else
                 {
                     for (int i = 0; i < ArgsLen; i++)
                     {
-                        if (i != ArgsLen - 1) Console.Write(Args[i] + ' ');
-                        else Console.Write(Args[i]);
+                        //if (i != ArgsLen - 1) Console.Write(Args[i] + ' ');
+                        //else Console.Write(Args[i]);
+
+                        if(i != ArgsLen)
+                        { // TODO: Something funny here!
+                            // Check if argument is variable, then print it's value:
+                            if (Args[i].StartsWith("$"))
+                            {
+                                Args[i] = Args[i].Substring(1);
+
+                                for (int a = 0; a < Vars.Length; a++)
+                                {
+                                    if (Vars[a] != null && Args[0] == Vars[a].GetName())
+                                    {
+                                        if (Vars[a].CheckType() == "str") Console.Write(Vars[a].GetVarString() + ' ');
+                                        else Console.Write(Vars[a].GetVarInt() + ' ');
+                                        if (a == Vars.Length + 1) Console.WriteLine();
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if(!(i + 1 == ArgsLen))
+                                {
+                                    Console.Write(Args[i] + ' ');
+                                }
+                                else
+                                {
+                                    Console.Write(Args[i] + ' ');
+                                    Console.WriteLine();
+                                }
+                            }
+                        }
+                        else Console.WriteLine(Args[i]);
                     }
-                    Console.WriteLine();
                 }
 
                 return;
@@ -260,13 +309,52 @@ namespace strayex_shell_win
                 { // None args:
                     Console.WriteLine("No arguments! Check 'set help' for instructions!");
                 }
+                else if (Args[0] == "!" && Args[1] != "")
+                { // Deletes var:
+                    bool IfFound = false;
+
+                    for (int i = 0; i < Vars.Length; i++)
+                    {
+                        // Be sure if there's any var:
+                        if (Vars[i] != null)
+                        {
+                            // Check if it's var shell is looking for:
+                            if(Args[1] == Vars[i].GetName())
+                            {
+                                IfFound = true;
+                                for (int a = i; a < Vars.Length - 1; a++)
+                                {
+                                    Vars[a] = Vars[a + 1];
+                                }
+                            }
+                        }
+                    }
+
+                    if(!IfFound)
+                    {
+                        Console.WriteLine("No variable named " + Args[1] + " found!");
+                        return;
+                    }
+                }
                 else if(Args[0] != "" && Args[1] != "")
                 { // Sets new var:
                     ShellVariable a;
 
+                    // There can't be more than one var with given name!
+                    for (int i = 0; i < Vars.Length; i++)
+                    {
+                        if (Vars[i] != null && Vars[i].GetName() == Args[0])
+                        {
+                            Console.WriteLine("Error - there is variable called " + Args[0] + "! Delete it first!");
+                            return;
+                        }
+                        else i++;
+                    }
+
                     // If value is integer:
                     if (Args[1].StartsWith("."))
                     {
+                        Args[1] = Args[1].Substring(1);
                         a = new ShellVariable(Args[0], Convert.ToInt32(Args[1]));
                     }
                     else
@@ -274,45 +362,36 @@ namespace strayex_shell_win
                         a = new ShellVariable(Args[0], Args[1]);
                     }
 
-                    for(int i = 0; i < Vars.Length; i++)
+                    // Save created var in shell:
+                    for (int i = 0; i < Vars.Length; i++)
                     {
                         if (Vars[i] == null)
                         {
                             Vars[i] = a;
                             return;
                         }
-                        else i++;
-                    }
-                }
-                else if(Args[0] == "!" && Args[1] != "")
-                { // Deletes var:
-                    for(int i = 0; i < Vars.Length; i++)
-                    {
-                        if(Args[0] == Vars[i].GetName())
-                        {
-                            for(int a = i; a < Vars.Length; a++) Vars[a] = Vars[a + 1];
-                        }
                     }
                 }
                 else if(Args[0] == "list")
                 { // Shows list of vars:
-                    // Checks if there are any vars in activ shell session:
+                    // Checks if there are any vars in active shell session:
                     if(Vars[0] != null)
                     {
+                        Console.WriteLine("Active shell session variables:");
+                        Console.WriteLine("| Name | Value | Type |");
                         for (int i = 0; i < Vars.Length; i++)
                         {
                             if (Vars[i] != null)
                             {
-                                if (Vars[i].CheckType())
+                                if (Vars[i].CheckType() == "str")
                                 {
-                                    Console.WriteLine(Vars[i].GetName() + " - " + Vars[i].GetVarString());
+                                    Console.WriteLine(Vars[i].GetName() + " - " + Vars[i].GetVarString() + " - String");
                                 }
                                 else
                                 {
-                                    Console.WriteLine(Vars[i].GetName() + " - " + Vars[i].GetVarInt());
+                                    Console.WriteLine(Vars[i].GetName() + " - " + Vars[i].GetVarInt() + " - Integer");
                                 }
                             }
-                            else i++;
                         }
                     }
                     else
