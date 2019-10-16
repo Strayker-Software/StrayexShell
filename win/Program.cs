@@ -7,6 +7,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 
 namespace strayex_shell_win
 {
@@ -27,7 +28,31 @@ namespace strayex_shell_win
 
             return Counter;
         }
-        
+
+        // Returns new string form given starting from given index to given char:
+        public static string SubStringChar(string Value, int Index, char LastChar)
+        {
+            // Prepare memory for new string:
+            var NewString = new StringBuilder
+            {
+                Length = Value.Length
+            };
+
+            // Where is last char in the string?
+            int IndexOfLastChar = 0;
+            while (Value[IndexOfLastChar] != LastChar) IndexOfLastChar++;
+
+            // Create new string:
+            int j = 0;
+            for (int i = Index; i < IndexOfLastChar + 1; i++)
+            {
+                NewString[j] += Value[i];
+                j++;
+            }
+
+            return NewString.ToString();
+        }
+
         // Checks file extension, returns specific file type or "0" string, if can't recognise file:
         static string DiscussFile(string FileName)
         { // TODO: Expand files support!
@@ -83,71 +108,54 @@ namespace strayex_shell_win
             {
                 // Writes args on screen:
 
-                int ArgsLen = 0;
+                // Prepare string:
+                string ArgsString = "";
                 for (int i = 0; i < Args.Length; i++)
                 {
-                    if (Args[i] != "") ArgsLen++;
+                    if (Args[i] != "" && i + 1 != Args.Length) ArgsString = ArgsString + Args[i] + " ";
+                    else if (Args[i] != "" && i + 1 == Args.Length) ArgsString = ArgsString + Args[i];
+                    else if(Args[0] == "")
+                    {
+                        Console.WriteLine();
+                        return;
+                    }
                 }
 
-                if (ArgsLen == 0) Console.WriteLine();
-                else if (ArgsLen == 1)
+                for(int i = 0; i < ArgsString.Length; i++)
                 {
                     // Check if argument is variable, then print it's value:
-                    if(Args[0].StartsWith("$"))
+                    if (ArgsString[i] == '$')
                     {
-                        Args[0] = Args[0].Substring(1);
+                        string VarName = "";
 
-                        for(int i = 0; i < Vars.Length; i++)
+                        // Take var name from input:
+                        if (Args.Length == 1) VarName = SubStringChar(ArgsString, i, '\n');
+                        else VarName = SubStringChar(ArgsString, i, ' ');
+
+                        // Look for variable in shell:
+                        for(int j = 0; j < Vars.Length; j++)
                         {
-                            if(Vars[i] != null && Args[0] == Vars[i].GetName())
+                            if(Vars[j].GetName() == VarName)
                             {
-                                if(Vars[i].CheckType() == "str") Console.WriteLine(Vars[i].GetVarString());
-                                else Console.WriteLine(Vars[i].GetVarInt());
-                            }
-                        }
-                    }
-                    else Console.WriteLine(Args[0]);
-                }
-                else
-                {
-                    for (int i = 0; i < ArgsLen; i++)
-                    {
-                        //if (i != ArgsLen - 1) Console.Write(Args[i] + ' ');
-                        //else Console.Write(Args[i]);
-
-                        if(i != ArgsLen)
-                        { // TODO: Something funny here!
-                            // Check if argument is variable, then print it's value:
-                            if (Args[i].StartsWith("$"))
-                            {
-                                Args[i] = Args[i].Substring(1);
-
-                                for (int a = 0; a < Vars.Length; a++)
-                                {
-                                    if (Vars[a] != null && Args[0] == Vars[a].GetName())
-                                    {
-                                        if (Vars[a].CheckType() == "str") Console.Write(Vars[a].GetVarString() + ' ');
-                                        else Console.Write(Vars[a].GetVarInt() + ' ');
-                                        if (a == Vars.Length + 1) Console.WriteLine();
-                                    }
-                                }
+                                // Here it is! Let's check it's type:
+                                if (Vars[j].CheckType() == "str") Console.Write(Vars[j].GetVarString());
+                                else Console.Write(Vars[j].GetVarInt());
                             }
                             else
                             {
-                                if(!(i + 1 == ArgsLen))
-                                {
-                                    Console.Write(Args[i] + ' ');
-                                }
-                                else
-                                {
-                                    Console.Write(Args[i] + ' ');
-                                    Console.WriteLine();
-                                }
+                                // No var named by user input was found, print '$' char and skip looking:
+                                Console.Write('$');
+                                return;
                             }
                         }
-                        else Console.WriteLine(Args[i]);
+                    }
+                    else
+                    {
+                        // There's no var, print it:
+                        Console.Write(ArgsString[i]);
                     }
                 }
+                if (Args.Length > 1) Console.WriteLine();
 
                 return;
             }
