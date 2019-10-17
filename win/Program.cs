@@ -11,7 +11,7 @@ using System.Text;
 
 namespace strayex_shell_win
 {
-    class Program
+    public class Program
     {
         public static string ShellPath = Directory.GetCurrentDirectory(); // Directory to work,
         public static string Cmd = ""; // Command,
@@ -84,7 +84,7 @@ namespace strayex_shell_win
             return "0";
         }
 
-        static void CmdInterpreter()
+        public static void CmdInterpreter()
         {
             // First index is command, higher indexes are arguments,
             // If user proviede args for commands, that don't need them, shell will ignore them,
@@ -421,9 +421,15 @@ namespace strayex_shell_win
 
             // File to open in third-party app:
             if (DiscussFile(Cmd) == "text")
-            {
+            { // TODO: Need improvment!
                 Process.Start("notepad.exe", ShellPath + '\\' + Cmd);
                 return;
+            }
+
+            // Scripts:
+            if(Cmd.StartsWith("."))
+            {
+
             }
 
             // Executable binaries:
