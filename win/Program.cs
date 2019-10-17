@@ -32,19 +32,19 @@ namespace strayex_shell_win
         // Returns new string form given starting from given index to given char:
         public static string SubStringChar(string Value, int Index, char LastChar)
         {
+            // Where is last char in the string?
+            int IndexOfLastChar = 0;
+            for (; Value[IndexOfLastChar] != LastChar; IndexOfLastChar++) ;
+
             // Prepare memory for new string:
             var NewString = new StringBuilder
             {
-                Length = Value.Length
+                Length = IndexOfLastChar
             };
-
-            // Where is last char in the string?
-            int IndexOfLastChar = 0;
-            while (Value[IndexOfLastChar] != LastChar) IndexOfLastChar++;
 
             // Create new string:
             int j = 0;
-            for (int i = Index; i < IndexOfLastChar + 1; i++)
+            for (int i = Index + 1; i < IndexOfLastChar; i++)
             {
                 NewString[j] += Value[i];
                 j++;
@@ -112,8 +112,8 @@ namespace strayex_shell_win
                 string ArgsString = "";
                 for (int i = 0; i < Args.Length; i++)
                 {
-                    if (Args[i] != "" && i + 1 != Args.Length) ArgsString = ArgsString + Args[i] + " ";
-                    else if (Args[i] != "" && i + 1 == Args.Length) ArgsString = ArgsString + Args[i];
+                    if (Args[i] != "" && Args[i + 1] != "") ArgsString = ArgsString + Args[i] + " ";
+                    else if (Args[i] != "" && Args[i + 1] == "") ArgsString = ArgsString + Args[i] + "\0";
                     else if(Args[0] == "")
                     {
                         Console.WriteLine();
@@ -121,31 +121,36 @@ namespace strayex_shell_win
                     }
                 }
 
+                // Check every letter of string:
                 for(int i = 0; i < ArgsString.Length; i++)
                 {
                     // Check if argument is variable, then print it's value:
                     if (ArgsString[i] == '$')
                     {
                         string VarName = "";
+                        var VarNameBuilder = new StringBuilder();
 
                         // Take var name from input:
-                        if (Args.Length == 1) VarName = SubStringChar(ArgsString, i, '\n');
-                        else VarName = SubStringChar(ArgsString, i, ' ');
+                        int a = 0;
+                        for (int k = i + 1; (ArgsString[k] != ' ') && (ArgsString[k] != '\0'); k++)
+                        {
+                            VarNameBuilder.Length++;
+                            VarNameBuilder[a] = ArgsString[k];
+                            VarName = VarNameBuilder.ToString();
+                            a++;
+                        }
 
                         // Look for variable in shell:
-                        for(int j = 0; j < Vars.Length; j++)
+                        for (int j = 0; j < Vars.Length; j++)
                         {
-                            if(Vars[j].GetName() == VarName)
+                            if (Vars[j] != null && Vars[j].GetName() == VarName)
                             {
                                 // Here it is! Let's check it's type:
                                 if (Vars[j].CheckType() == "str") Console.Write(Vars[j].GetVarString());
                                 else Console.Write(Vars[j].GetVarInt());
-                            }
-                            else
-                            {
-                                // No var named by user input was found, print '$' char and skip looking:
-                                Console.Write('$');
-                                return;
+
+                                // Also, we have to skip the call of var in arg:
+                                ArgsString = ArgsString.Remove(i, VarName.Length);
                             }
                         }
                     }
