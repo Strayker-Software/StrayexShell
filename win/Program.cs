@@ -17,6 +17,7 @@ namespace strayex_shell_win
         public static string Cmd = ""; // Command,
         public static string[] Args = new string[50]; // Arguments,
         public static ShellVariable[] Vars = new ShellVariable[100]; // Max 100 shell variables,
+        public static bool IfEcho = true; // State of echo command, command can be on or off,
 
         // Counts, how much times the given char appears in string, maybe will be usefull in future:
         static int CountChar(char x, string y)
@@ -107,6 +108,37 @@ namespace strayex_shell_win
             else if (Cmd == "echo") // Write something in console, if no args are given, shell will write empty line,
             {
                 // Writes args on screen:
+
+                // Check if user want to turn on or off the command:
+                if(Args[0] == "/on")
+                {
+                    // User want to turn on echo!
+                    IfEcho = true;
+                    return;
+                }
+                else if(Args[0] == "/off")
+                {
+                    // User want to turn off echo!
+                    IfEcho = false;
+                    return;
+                }
+                else if(Args[0] == "/help") // Check if user want help for printing in shell:
+                {
+                    Console.WriteLine("Strayex Shell Echo Command");
+                    Console.WriteLine("This command prints out on the console the given args!");
+                    Console.WriteLine("- echo - prints empty line,");
+                    Console.WriteLine("- echo <arg> ... - prints given args on screen, separated by spaces,");
+                    Console.WriteLine("- echo $<varname> ... - prints, in given place, value from shell variable, can be mobile,");
+                    return;
+                }
+
+                // Is echo on? Check it out!
+                if(!IfEcho)
+                {
+                    // No, it's not on. So printing on screen now is denied!
+                    return;
+                }
+                // Yes! Echo is on! Let's print args!
 
                 // Prepare string:
                 string ArgsString = "";
