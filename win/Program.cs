@@ -483,9 +483,21 @@ namespace strayex_shell_win
             Console.WriteLine("Command or program not found!");
         }
 
+        // Hello! Strayex Shell starts here! :D
         static void Main(string[] args)
         {
             Console.Title = ShellPath + " - Strayex Shell";
+
+            // Here shell is checking if there is cnfig script, it has to be named: "ssconfig.txt":
+            if(File.Exists(ShellPath + "ssconfig.txt"))
+            { // Yes, it's here! So user of shell want to configure it, before use. Let's do it!
+                // To be sure of existence of config script, Script class will check it one more time in ExecuteScript function:
+                var Config = new Script("ssconfig.txt", ShellPath);
+
+                Config.ExecuteScript();
+            }
+            // Shell is now configured, let's start the command routine:
+
             // Standard shell's header:
             Console.WriteLine("Strayex Shell for Windows v1.0.0");
             Console.WriteLine("Copyright (c) 2019 Daniel Strayker Nowak");
