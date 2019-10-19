@@ -10,7 +10,7 @@ namespace strayex_shell_win
 
         public Script(string Name, string PathToFile)
         {
-            this.Name = Name.Substring(1);
+            this.Name = Name;
             this.PathToFile = PathToFile;
         }
 
@@ -29,7 +29,7 @@ namespace strayex_shell_win
                         // Get next command form script:
                         string temp = Reader.ReadLine();
                         // If line starts with #, it's comment, so execution will ignore it:
-                        if (temp.StartsWith("#")) break;
+                        if (temp.StartsWith("#")) continue;
                         // Split args and command into array:
                         string[] help = temp.Split(' ');
                         // First element of array is always command name!
