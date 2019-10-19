@@ -10,18 +10,23 @@ namespace strayex_shell_win
 
         public Script(string Name, string PathToFile)
         {
-            this.Name = Name;
+            this.Name = Name.Substring(1);
             this.PathToFile = PathToFile;
         }
 
+        // Executes the given script:
         public void ExecuteScript()
         {
-            if(Directory.Exists(PathToFile))
+            // Checks if this script exists:
+            if(File.Exists(PathToFile + '\\' + Name))
             {
-                using (var Reader = new StreamReader(PathToFile))
+                // Yes, it exists! Let's read commands from it:
+                using (var Reader = new StreamReader(PathToFile + '\\' + Name))
                 {
-                    for(int i = 0; Reader.EndOfStream; i++)
+                    // For loop to execute each command from file, like in Main function of Program class:
+                    for(int i = 0; !Reader.EndOfStream; i++)
                     {
+                        // Get next command form script:
                         string temp = Reader.ReadLine();
                         // Split args and command into array:
                         string[] help = temp.Split(' ');
@@ -40,11 +45,14 @@ namespace strayex_shell_win
                         // Interpret the command:
                         Program.CmdInterpreter();
                     }
+
+                    return;
                 }
             }
             else
             {
-                Console.WriteLine("No file called " + PathToFile + " exists!");
+                Console.WriteLine("No script called " + Name + " exists!");
+                return;
             }
         }
     }

@@ -419,17 +419,22 @@ namespace strayex_shell_win
             else if (Cmd == "exit") Environment.Exit(0);
             else if (Cmd == "") return;
 
+            // Scripts:
+            if (Cmd.StartsWith("."))
+            {
+                var ScriptName = Cmd.Substring(0);
+
+                var Exec = new Script(ScriptName, ShellPath);
+                Exec.ExecuteScript();
+
+                return;
+            }
+
             // File to open in third-party app:
             if (DiscussFile(Cmd) == "text")
             { // TODO: Need improvment!
                 Process.Start("notepad.exe", ShellPath + '\\' + Cmd);
                 return;
-            }
-
-            // Scripts:
-            if(Cmd.StartsWith("."))
-            {
-
             }
 
             // Executable binaries:
