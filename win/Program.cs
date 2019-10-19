@@ -62,7 +62,7 @@ namespace strayex_shell_win
             {
                 // With extension!
 
-                // Determine, witch file is it:
+                // Determine, which file is it:
                 if (FileName.EndsWith(".exe")) return "apk";
                 else if (FileName.EndsWith(".txt")) return "text";
                 else if (FileName.EndsWith(".png")) return "image";
@@ -129,6 +129,7 @@ namespace strayex_shell_win
                     Console.WriteLine("- echo - prints empty line,");
                     Console.WriteLine("- echo <arg> ... - prints given args on screen, separated by spaces,");
                     Console.WriteLine("- echo $<varname> ... - prints, in given place, value from shell variable, can be mobile,");
+                    Console.WriteLine("- echo /<on><off> - switch on or off printing command,");
                     return;
                 }
 
@@ -520,8 +521,13 @@ namespace strayex_shell_win
         {
             Console.Title = ShellPath + " - Strayex Shell";
 
+            // Standard shell's header:
+            Console.WriteLine("Strayex Shell for Windows v1.0.0");
+            Console.WriteLine("Copyright (c) 2019 Daniel Strayker Nowak");
+            Console.WriteLine("All rights reserved");
+
             // Here shell is checking if there is cnfig script, it has to be named: "ssconfig.txt":
-            if(File.Exists(ShellPath + "ssconfig.txt"))
+            if (File.Exists(ShellPath + "ssconfig.txt"))
             { // Yes, it's here! So user of shell want to configure it, before use. Let's do it!
                 // To be sure of existence of config script, Script class will check it one more time in ExecuteScript function:
                 var Config = new Script("ssconfig.txt", ShellPath);
@@ -530,10 +536,8 @@ namespace strayex_shell_win
             }
             // Shell is now configured, let's start the command routine:
 
-            // Standard shell's header:
-            Console.WriteLine("Strayex Shell for Windows v1.0.0");
-            Console.WriteLine("Copyright (c) 2019 Daniel Strayker Nowak");
-            Console.WriteLine("All rights reserved");
+            // Set title of window:
+            Console.Title = ShellPath + " - Strayex Shell";
 
             // Command routine:
             string temp = "";
@@ -541,8 +545,6 @@ namespace strayex_shell_win
             // While shell still execute:
             while(temp != "exit")
             {
-                // Set title of window:
-                Console.Title = ShellPath + " - Strayex Shell";
                 // Write line for command input:
                 Console.Write(ShellPath + "> ");
                 // Wait for command:
