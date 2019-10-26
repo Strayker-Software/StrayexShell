@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "strayex_shell_win", "win\strayex_shell_win.csproj", "{FAC977A2-04B4-4B3D-A766-4DFFA87DA16C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloWorldTest", "HelloWorldTest\HelloWorldTest.vcxproj", "{00685949-9506-4A1B-86BA-C4B5F104549E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,20 +39,6 @@ Global
 		{FAC977A2-04B4-4B3D-A766-4DFFA87DA16C}.Release|x64.Build.0 = Release|Any CPU
 		{FAC977A2-04B4-4B3D-A766-4DFFA87DA16C}.Release|x86.ActiveCfg = Release|Any CPU
 		{FAC977A2-04B4-4B3D-A766-4DFFA87DA16C}.Release|x86.Build.0 = Release|Any CPU
-		{00685949-9506-4A1B-86BA-C4B5F104549E}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{00685949-9506-4A1B-86BA-C4B5F104549E}.Debug|ARM.ActiveCfg = Debug|Win32
-		{00685949-9506-4A1B-86BA-C4B5F104549E}.Debug|ARM64.ActiveCfg = Debug|Win32
-		{00685949-9506-4A1B-86BA-C4B5F104549E}.Debug|x64.ActiveCfg = Debug|x64
-		{00685949-9506-4A1B-86BA-C4B5F104549E}.Debug|x64.Build.0 = Debug|x64
-		{00685949-9506-4A1B-86BA-C4B5F104549E}.Debug|x86.ActiveCfg = Debug|Win32
-		{00685949-9506-4A1B-86BA-C4B5F104549E}.Debug|x86.Build.0 = Debug|Win32
-		{00685949-9506-4A1B-86BA-C4B5F104549E}.Release|Any CPU.ActiveCfg = Release|Win32
-		{00685949-9506-4A1B-86BA-C4B5F104549E}.Release|ARM.ActiveCfg = Release|Win32
-		{00685949-9506-4A1B-86BA-C4B5F104549E}.Release|ARM64.ActiveCfg = Release|Win32
-		{00685949-9506-4A1B-86BA-C4B5F104549E}.Release|x64.ActiveCfg = Release|x64
-		{00685949-9506-4A1B-86BA-C4B5F104549E}.Release|x64.Build.0 = Release|x64
-		{00685949-9506-4A1B-86BA-C4B5F104549E}.Release|x86.ActiveCfg = Release|Win32
-		{00685949-9506-4A1B-86BA-C4B5F104549E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
