@@ -15,7 +15,7 @@ namespace strayex_shell_win
         }
 
         // Executes the given script:
-        public void ExecuteScript()
+        public bool ExecuteScript()
         {
             // Checks if this script exists:
             if(File.Exists(PathToFile + '\\' + Name))
@@ -30,31 +30,37 @@ namespace strayex_shell_win
                         string temp = Reader.ReadLine();
                         // If line starts with #, it's comment, so execution will ignore it:
                         if (temp.StartsWith("#")) continue;
+                        // If line is empty, also skip it:
+                        if (temp == "") continue;
                         // Split args and command into array:
                         string[] help = temp.Split(' ');
                         // First element of array is always command name!
                         Program.Cmd = help[0];
 
                         // Prepare args strings to add to shell:
-                        int b = 0;
-                        for (; b < 50; b++) Program.Args[b] = "";
+                        Program.Args = new string[50];
 
                         for (int a = 1; a < help.Length; a++)
                         {
                             Program.Args[a - 1] = help[a];
                         }
 
+                        // Command class instance:
+                        var cmdc = new ShellCommand(Program.Cmd, Program.Args);
+
                         // Interpret the command:
-                        Program.CmdInterpreter();
+                        var IfInterpreted = cmdc.Interpret();
+
+                        if (IfInterpreted == false) Console.WriteLine("Line {0}. Command or program not found!", i);
                     }
 
-                    return;
+                    return true;
                 }
             }
             else
             {
                 Console.WriteLine("No script called " + Name + " exists!");
-                return;
+                return false;
             }
         }
     }

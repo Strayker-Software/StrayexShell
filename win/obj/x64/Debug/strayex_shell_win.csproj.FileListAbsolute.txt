@@ -1,0 +1,7 @@
+H:\Daniel\Repozytoria\StrayexShell\win\bin\x64\Debug\strayex_shell_win.exe.config
+H:\Daniel\Repozytoria\StrayexShell\win\bin\x64\Debug\strayex_shell_win.exe
+H:\Daniel\Repozytoria\StrayexShell\win\bin\x64\Debug\strayex_shell_win.pdb
+H:\Daniel\Repozytoria\StrayexShell\win\obj\x64\Debug\strayex_shell_win.csprojAssemblyReference.cache
+H:\Daniel\Repozytoria\StrayexShell\win\obj\x64\Debug\strayex_shell_win.csproj.CoreCompileInputs.cache
+H:\Daniel\Repozytoria\StrayexShell\win\obj\x64\Debug\strayex_shell_win.exe
+H:\Daniel\Repozytoria\StrayexShell\win\obj\x64\Debug\strayex_shell_win.pdb
