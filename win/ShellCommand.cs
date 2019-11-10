@@ -322,10 +322,12 @@ namespace strayex_shell_win
                 Console.WriteLine("When declaring integer var before <value> data place dot '.'.");
                 Console.WriteLine("For example: declaring string var: 'set SomeText Hello!',");
                 Console.WriteLine("declaring integer var: 'set SomeInt .123'");
+                return true;
             }
-            else if (Program.Args[0] == null)
+            else if (Args[0] == null)
             { // None args:
                 Console.WriteLine("No arguments! Check 'set help' for instructions!");
+                return true;
             }
             else if (Args[0] == "!" && Args[1] != null)
             { // Deletes var:
@@ -344,6 +346,7 @@ namespace strayex_shell_win
                             {
                                 Program.Vars[a] = Program.Vars[a + 1];
                             }
+                            return true;
                         }
                     }
                 }
@@ -470,7 +473,7 @@ namespace strayex_shell_win
                         return true;
                     }
                     Console.Title = Program.ShellPath + " - Strayex Shell";
-                    return false;
+                    return true;
 
                 case "color":
                     if (Color()) return true;
