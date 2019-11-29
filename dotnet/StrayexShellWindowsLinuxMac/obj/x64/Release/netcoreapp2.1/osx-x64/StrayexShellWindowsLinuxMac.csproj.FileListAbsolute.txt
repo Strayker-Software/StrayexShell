@@ -1,0 +1,13 @@
+H:\Daniel\Repozytoria\StrayexShell\dotnet\bin\x64\Release\netcoreapp2.1\osx-x64\libhostpolicy.dylib
+H:\Daniel\Repozytoria\StrayexShell\dotnet\bin\x64\Release\netcoreapp2.1\osx-x64\libhostfxr.dylib
+H:\Daniel\Repozytoria\StrayexShell\dotnet\bin\x64\Release\netcoreapp2.1\osx-x64\StrayexShellWindowsLinuxMac
+H:\Daniel\Repozytoria\StrayexShell\dotnet\bin\x64\Release\netcoreapp2.1\osx-x64\StrayexShellWindowsLinuxMac.deps.json
+H:\Daniel\Repozytoria\StrayexShell\dotnet\bin\x64\Release\netcoreapp2.1\osx-x64\StrayexShellWindowsLinuxMac.runtimeconfig.json
+H:\Daniel\Repozytoria\StrayexShell\dotnet\bin\x64\Release\netcoreapp2.1\osx-x64\StrayexShellWindowsLinuxMac.runtimeconfig.dev.json
+H:\Daniel\Repozytoria\StrayexShell\dotnet\bin\x64\Release\netcoreapp2.1\osx-x64\StrayexShellWindowsLinuxMac.dll
+H:\Daniel\Repozytoria\StrayexShell\dotnet\bin\x64\Release\netcoreapp2.1\osx-x64\StrayexShellWindowsLinuxMac.pdb
+H:\Daniel\Repozytoria\StrayexShell\dotnet\obj\x64\Release\netcoreapp2.1\osx-x64\StrayexShellWindowsLinuxMac.csproj.CoreCompileInputs.cache
+H:\Daniel\Repozytoria\StrayexShell\dotnet\obj\x64\Release\netcoreapp2.1\osx-x64\StrayexShellWindowsLinuxMac.AssemblyInfoInputs.cache
+H:\Daniel\Repozytoria\StrayexShell\dotnet\obj\x64\Release\netcoreapp2.1\osx-x64\StrayexShellWindowsLinuxMac.AssemblyInfo.cs
+H:\Daniel\Repozytoria\StrayexShell\dotnet\obj\x64\Release\netcoreapp2.1\osx-x64\StrayexShellWindowsLinuxMac.dll
+H:\Daniel\Repozytoria\StrayexShell\dotnet\obj\x64\Release\netcoreapp2.1\osx-x64\StrayexShellWindowsLinuxMac.pdb

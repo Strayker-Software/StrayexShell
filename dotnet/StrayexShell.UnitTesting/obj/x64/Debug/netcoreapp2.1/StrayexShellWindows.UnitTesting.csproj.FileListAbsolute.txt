@@ -1,0 +1,17 @@
+H:\Daniel\Repozytoria\StrayexShell\StrayexShellWindows.UnitTesting\bin\x64\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+H:\Daniel\Repozytoria\StrayexShell\StrayexShellWindows.UnitTesting\bin\x64\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+H:\Daniel\Repozytoria\StrayexShell\StrayexShellWindows.UnitTesting\bin\x64\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+H:\Daniel\Repozytoria\StrayexShell\StrayexShellWindows.UnitTesting\bin\x64\Debug\netcoreapp2.1\StrayexShellWindows.UnitTesting.deps.json
+H:\Daniel\Repozytoria\StrayexShell\StrayexShellWindows.UnitTesting\bin\x64\Debug\netcoreapp2.1\StrayexShellWindows.UnitTesting.runtimeconfig.json
+H:\Daniel\Repozytoria\StrayexShell\StrayexShellWindows.UnitTesting\bin\x64\Debug\netcoreapp2.1\StrayexShellWindows.UnitTesting.runtimeconfig.dev.json
+H:\Daniel\Repozytoria\StrayexShell\StrayexShellWindows.UnitTesting\bin\x64\Debug\netcoreapp2.1\StrayexShellWindows.UnitTesting.dll
+H:\Daniel\Repozytoria\StrayexShell\StrayexShellWindows.UnitTesting\bin\x64\Debug\netcoreapp2.1\StrayexShellWindows.UnitTesting.pdb
+H:\Daniel\Repozytoria\StrayexShell\StrayexShellWindows.UnitTesting\bin\x64\Debug\netcoreapp2.1\StrayexShellWindows.dll
+H:\Daniel\Repozytoria\StrayexShell\StrayexShellWindows.UnitTesting\bin\x64\Debug\netcoreapp2.1\StrayexShellWindows.pdb
+H:\Daniel\Repozytoria\StrayexShell\StrayexShellWindows.UnitTesting\obj\x64\Debug\netcoreapp2.1\StrayexShellWindows.UnitTesting.csprojAssemblyReference.cache
+H:\Daniel\Repozytoria\StrayexShell\StrayexShellWindows.UnitTesting\obj\x64\Debug\netcoreapp2.1\StrayexShellWindows.UnitTesting.csproj.CoreCompileInputs.cache
+H:\Daniel\Repozytoria\StrayexShell\StrayexShellWindows.UnitTesting\obj\x64\Debug\netcoreapp2.1\StrayexShellWindows.UnitTesting.AssemblyInfoInputs.cache
+H:\Daniel\Repozytoria\StrayexShell\StrayexShellWindows.UnitTesting\obj\x64\Debug\netcoreapp2.1\StrayexShellWindows.UnitTesting.AssemblyInfo.cs
+H:\Daniel\Repozytoria\StrayexShell\StrayexShellWindows.UnitTesting\obj\x64\Debug\netcoreapp2.1\StrayexShellWindows.UnitTesting.csproj.CopyComplete
+H:\Daniel\Repozytoria\StrayexShell\StrayexShellWindows.UnitTesting\obj\x64\Debug\netcoreapp2.1\StrayexShellWindows.UnitTesting.dll
+H:\Daniel\Repozytoria\StrayexShell\StrayexShellWindows.UnitTesting\obj\x64\Debug\netcoreapp2.1\StrayexShellWindows.UnitTesting.pdb

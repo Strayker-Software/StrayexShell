@@ -1,0 +1,11 @@
+H:\Daniel\Repozytoria\StrayexShell\windows\bin\x64\Debug\netcoreapp2.1\StrayexShellWindows.deps.json
+H:\Daniel\Repozytoria\StrayexShell\windows\bin\x64\Debug\netcoreapp2.1\StrayexShellWindows.runtimeconfig.json
+H:\Daniel\Repozytoria\StrayexShell\windows\bin\x64\Debug\netcoreapp2.1\StrayexShellWindows.runtimeconfig.dev.json
+H:\Daniel\Repozytoria\StrayexShell\windows\bin\x64\Debug\netcoreapp2.1\StrayexShellWindows.dll
+H:\Daniel\Repozytoria\StrayexShell\windows\bin\x64\Debug\netcoreapp2.1\StrayexShellWindows.pdb
+H:\Daniel\Repozytoria\StrayexShell\windows\obj\x64\Debug\netcoreapp2.1\StrayexShellWindows.csprojAssemblyReference.cache
+H:\Daniel\Repozytoria\StrayexShell\windows\obj\x64\Debug\netcoreapp2.1\StrayexShellWindows.csproj.CoreCompileInputs.cache
+H:\Daniel\Repozytoria\StrayexShell\windows\obj\x64\Debug\netcoreapp2.1\StrayexShellWindows.AssemblyInfoInputs.cache
+H:\Daniel\Repozytoria\StrayexShell\windows\obj\x64\Debug\netcoreapp2.1\StrayexShellWindows.AssemblyInfo.cs
+H:\Daniel\Repozytoria\StrayexShell\windows\obj\x64\Debug\netcoreapp2.1\StrayexShellWindows.dll
+H:\Daniel\Repozytoria\StrayexShell\windows\obj\x64\Debug\netcoreapp2.1\StrayexShellWindows.pdb

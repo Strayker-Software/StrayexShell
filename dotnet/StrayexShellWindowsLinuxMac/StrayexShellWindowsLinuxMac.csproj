@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Platforms>AnyCPU;x64</Platforms>
+    <StartupObject>StrayexShellWindows.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="packages\**" />
+    <Compile Remove="StrayexShellWindows.UnitTesting\**" />
+    <EmbeddedResource Remove="packages\**" />
+    <EmbeddedResource Remove="StrayexShellWindows.UnitTesting\**" />
+    <None Remove="packages\**" />
+    <None Remove="StrayexShellWindows.UnitTesting\**" />
+  </ItemGroup>
+
+</Project>

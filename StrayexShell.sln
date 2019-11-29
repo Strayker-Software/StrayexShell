@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrayexShellWindowsLinuxMac", "dotnet\StrayexShellWindowsLinuxMac\StrayexShellWindowsLinuxMac.csproj", "{28E71583-717B-4375-88FE-C59E129E4BB3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrayexShellInstaller", "dotnet\StrayexShellInstaller\StrayexShellInstaller.csproj", "{8F804020-A19B-49BB-A3C6-2E7A3AD744D4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrayexShell.UnitTesting", "dotnet\StrayexShell.UnitTesting\StrayexShell.UnitTesting.csproj", "{536C4E48-D1EC-46B2-8D3A-E1AA4600379C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28E71583-717B-4375-88FE-C59E129E4BB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28E71583-717B-4375-88FE-C59E129E4BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28E71583-717B-4375-88FE-C59E129E4BB3}.Debug|x64.ActiveCfg = Debug|x64
+		{28E71583-717B-4375-88FE-C59E129E4BB3}.Debug|x64.Build.0 = Debug|x64
+		{28E71583-717B-4375-88FE-C59E129E4BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28E71583-717B-4375-88FE-C59E129E4BB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28E71583-717B-4375-88FE-C59E129E4BB3}.Release|x64.ActiveCfg = Release|x64
+		{28E71583-717B-4375-88FE-C59E129E4BB3}.Release|x64.Build.0 = Release|x64
+		{8F804020-A19B-49BB-A3C6-2E7A3AD744D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F804020-A19B-49BB-A3C6-2E7A3AD744D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F804020-A19B-49BB-A3C6-2E7A3AD744D4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8F804020-A19B-49BB-A3C6-2E7A3AD744D4}.Debug|x64.Build.0 = Debug|Any CPU
+		{8F804020-A19B-49BB-A3C6-2E7A3AD744D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F804020-A19B-49BB-A3C6-2E7A3AD744D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F804020-A19B-49BB-A3C6-2E7A3AD744D4}.Release|x64.ActiveCfg = Release|Any CPU
+		{8F804020-A19B-49BB-A3C6-2E7A3AD744D4}.Release|x64.Build.0 = Release|Any CPU
+		{536C4E48-D1EC-46B2-8D3A-E1AA4600379C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{536C4E48-D1EC-46B2-8D3A-E1AA4600379C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{536C4E48-D1EC-46B2-8D3A-E1AA4600379C}.Debug|x64.ActiveCfg = Debug|x64
+		{536C4E48-D1EC-46B2-8D3A-E1AA4600379C}.Debug|x64.Build.0 = Debug|x64
+		{536C4E48-D1EC-46B2-8D3A-E1AA4600379C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{536C4E48-D1EC-46B2-8D3A-E1AA4600379C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{536C4E48-D1EC-46B2-8D3A-E1AA4600379C}.Release|x64.ActiveCfg = Release|x64
+		{536C4E48-D1EC-46B2-8D3A-E1AA4600379C}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {869DDC78-5C5D-44A4-BB45-D54FDF8C66B8}
+	EndGlobalSection
+EndGlobal

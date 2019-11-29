@@ -1,0 +1,11 @@
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\bin\Debug\netcoreapp2.1\StrayexShellInstaller.deps.json
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\bin\Debug\netcoreapp2.1\StrayexShellInstaller.runtimeconfig.json
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\bin\Debug\netcoreapp2.1\StrayexShellInstaller.runtimeconfig.dev.json
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\bin\Debug\netcoreapp2.1\StrayexShellInstaller.dll
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\bin\Debug\netcoreapp2.1\StrayexShellInstaller.pdb
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\obj\Debug\netcoreapp2.1\StrayexShellInstaller.csprojAssemblyReference.cache
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\obj\Debug\netcoreapp2.1\StrayexShellInstaller.csproj.CoreCompileInputs.cache
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\obj\Debug\netcoreapp2.1\StrayexShellInstaller.AssemblyInfoInputs.cache
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\obj\Debug\netcoreapp2.1\StrayexShellInstaller.AssemblyInfo.cs
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\obj\Debug\netcoreapp2.1\StrayexShellInstaller.dll
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\obj\Debug\netcoreapp2.1\StrayexShellInstaller.pdb

@@ -1,7 +1,0 @@
-H:\Daniel\Repozytoria\StrayexShell\win\bin\x64\Debug\Strayex Shell for Windows.exe.config
-H:\Daniel\Repozytoria\StrayexShell\win\bin\x64\Debug\Strayex Shell for Windows.exe
-H:\Daniel\Repozytoria\StrayexShell\win\bin\x64\Debug\Strayex Shell for Windows.pdb
-H:\Daniel\Repozytoria\StrayexShell\win\obj\x64\Debug\Strayex Shell for Windows.csprojAssemblyReference.cache
-H:\Daniel\Repozytoria\StrayexShell\win\obj\x64\Debug\Strayex Shell for Windows.csproj.CoreCompileInputs.cache
-H:\Daniel\Repozytoria\StrayexShell\win\obj\x64\Debug\Strayex Shell for Windows.exe
-H:\Daniel\Repozytoria\StrayexShell\win\obj\x64\Debug\Strayex Shell for Windows.pdb

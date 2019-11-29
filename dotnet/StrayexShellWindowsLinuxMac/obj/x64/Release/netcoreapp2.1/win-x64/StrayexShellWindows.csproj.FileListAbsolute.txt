@@ -1,0 +1,11 @@
+H:\Daniel\Repozytoria\StrayexShell\windows\bin\x64\Release\netcoreapp2.1\win-x64\StrayexShellWindows.deps.json
+H:\Daniel\Repozytoria\StrayexShell\windows\bin\x64\Release\netcoreapp2.1\win-x64\StrayexShellWindows.runtimeconfig.json
+H:\Daniel\Repozytoria\StrayexShell\windows\bin\x64\Release\netcoreapp2.1\win-x64\StrayexShellWindows.runtimeconfig.dev.json
+H:\Daniel\Repozytoria\StrayexShell\windows\bin\x64\Release\netcoreapp2.1\win-x64\StrayexShellWindows.dll
+H:\Daniel\Repozytoria\StrayexShell\windows\bin\x64\Release\netcoreapp2.1\win-x64\StrayexShellWindows.pdb
+H:\Daniel\Repozytoria\StrayexShell\windows\obj\x64\Release\netcoreapp2.1\win-x64\StrayexShellWindows.csprojAssemblyReference.cache
+H:\Daniel\Repozytoria\StrayexShell\windows\obj\x64\Release\netcoreapp2.1\win-x64\StrayexShellWindows.csproj.CoreCompileInputs.cache
+H:\Daniel\Repozytoria\StrayexShell\windows\obj\x64\Release\netcoreapp2.1\win-x64\StrayexShellWindows.AssemblyInfoInputs.cache
+H:\Daniel\Repozytoria\StrayexShell\windows\obj\x64\Release\netcoreapp2.1\win-x64\StrayexShellWindows.AssemblyInfo.cs
+H:\Daniel\Repozytoria\StrayexShell\windows\obj\x64\Release\netcoreapp2.1\win-x64\StrayexShellWindows.dll
+H:\Daniel\Repozytoria\StrayexShell\windows\obj\x64\Release\netcoreapp2.1\win-x64\StrayexShellWindows.pdb
