@@ -1,0 +1,194 @@
+{
+  "format": 1,
+  "restore": {
+    "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShell.UnitTesting\\StrayexShell.UnitTesting.csproj": {}
+  },
+  "projects": {
+    "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShell.UnitTesting\\StrayexShell.UnitTesting.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShell.UnitTesting\\StrayexShell.UnitTesting.csproj",
+        "projectName": "StrayexShell.UnitTesting",
+        "projectPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShell.UnitTesting\\StrayexShell.UnitTesting.csproj",
+        "packagesPath": "C:\\Users\\Strayker\\.nuget\\packages\\",
+        "outputPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShell.UnitTesting\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Strayker\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShellInstaller.csproj": {
+                "projectPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShellInstaller.csproj"
+              },
+              "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellWindowsLinuxMac\\StrayexShellWindowsLinuxMac.csproj": {
+                "projectPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellWindowsLinuxMac\\StrayexShellWindowsLinuxMac.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[1.3.2, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[1.3.2, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[15.9.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShellInstaller.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShellInstaller.csproj",
+        "projectName": "StrayexShellInstaller",
+        "projectPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShellInstaller.csproj",
+        "packagesPath": "C:\\Users\\Strayker\\.nuget\\packages\\",
+        "outputPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Strayker\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellWindowsLinuxMac\\StrayexShellWindowsLinuxMac.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellWindowsLinuxMac\\StrayexShellWindowsLinuxMac.csproj",
+        "projectName": "StrayexShellWindowsLinuxMac",
+        "projectPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellWindowsLinuxMac\\StrayexShellWindowsLinuxMac.csproj",
+        "packagesPath": "C:\\Users\\Strayker\\.nuget\\packages\\",
+        "outputPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellWindowsLinuxMac\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Strayker\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
