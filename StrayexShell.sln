@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.329
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrayexShellWindowsLinuxMac", "dotnet\StrayexShellWindowsLinuxMac\StrayexShellWindowsLinuxMac.csproj", "{28E71583-717B-4375-88FE-C59E129E4BB3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrayexShellInstaller", "dotnet\StrayexShellInstaller\StrayexShellInstaller.csproj", "{8F804020-A19B-49BB-A3C6-2E7A3AD744D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrayexShell.Installer", "dotnet\StrayexShellInstaller\StrayexShell.Installer.csproj", "{8F804020-A19B-49BB-A3C6-2E7A3AD744D4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrayexShell.UnitTesting", "dotnet\StrayexShell.UnitTesting\StrayexShell.UnitTesting.csproj", "{536C4E48-D1EC-46B2-8D3A-E1AA4600379C}"
 EndProject

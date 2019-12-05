@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShellInstaller.csproj": {
-                "projectPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShellInstaller.csproj"
+              "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShell.Installer.csproj": {
+                "projectPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShell.Installer.csproj"
               },
               "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellWindowsLinuxMac\\StrayexShellWindowsLinuxMac.csproj": {
                 "projectPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellWindowsLinuxMac\\StrayexShellWindowsLinuxMac.csproj"
@@ -71,21 +71,27 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShellInstaller.csproj": {
+    "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShell.Installer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShellInstaller.csproj",
-        "projectName": "StrayexShellInstaller",
-        "projectPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShellInstaller.csproj",
+        "projectUniqueName": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShell.Installer.csproj",
+        "projectName": "StrayexShell.Installer",
+        "projectPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShell.Installer.csproj",
         "packagesPath": "C:\\Users\\Strayker\\.nuget\\packages\\",
         "outputPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\obj\\",
         "projectStyle": "PackageReference",
@@ -126,12 +132,22 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.0.1, 3.0.1]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -181,12 +197,22 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.0.1, 3.0.1]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

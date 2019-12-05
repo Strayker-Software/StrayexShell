@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShellInstaller.csproj": {}
+    "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShell.Installer.csproj": {}
   },
   "projects": {
-    "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShellInstaller.csproj": {
+    "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShell.Installer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShellInstaller.csproj",
-        "projectName": "StrayexShellInstaller",
-        "projectPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShellInstaller.csproj",
+        "projectUniqueName": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShell.Installer.csproj",
+        "projectName": "StrayexShell.Installer",
+        "projectPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShell.Installer.csproj",
         "packagesPath": "C:\\Users\\Strayker\\.nuget\\packages\\",
         "outputPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\obj\\",
         "projectStyle": "PackageReference",

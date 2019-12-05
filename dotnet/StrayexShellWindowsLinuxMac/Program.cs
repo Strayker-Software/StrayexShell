@@ -1,5 +1,5 @@
 ﻿/*
-    Strayex Shell for Windows
+    Strayex Shell
     Copyright © 2019 Daniel Strayker Nowak
     All rights reserved
  */

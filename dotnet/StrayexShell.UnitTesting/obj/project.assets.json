@@ -2058,14 +2058,14 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "StrayexShellInstaller/1.0.0": {
+      "StrayexShell.Installer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
         "compile": {
-          "bin/placeholder/StrayexShellInstaller.dll": {}
+          "bin/placeholder/StrayexShell.Installer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/StrayexShellInstaller.dll": {}
+          "bin/placeholder/StrayexShell.Installer.dll": {}
         }
       },
       "StrayexShellWindowsLinuxMac/1.0.0": {
@@ -6824,10 +6824,10 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "StrayexShellInstaller/1.0.0": {
+    "StrayexShell.Installer/1.0.0": {
       "type": "project",
-      "path": "../StrayexShellInstaller/StrayexShellInstaller.csproj",
-      "msbuildProject": "../StrayexShellInstaller/StrayexShellInstaller.csproj"
+      "path": "../StrayexShellInstaller/StrayexShell.Installer.csproj",
+      "msbuildProject": "../StrayexShellInstaller/StrayexShell.Installer.csproj"
     },
     "StrayexShellWindowsLinuxMac/1.0.0": {
       "type": "project",
@@ -6840,7 +6840,7 @@
       "MSTest.TestAdapter >= 1.3.2",
       "MSTest.TestFramework >= 1.3.2",
       "Microsoft.NET.Test.Sdk >= 15.9.0",
-      "StrayexShellInstaller >= 1.0.0",
+      "StrayexShell.Installer >= 1.0.0",
       "StrayexShellWindowsLinuxMac >= 1.0.0"
     ]
   },
@@ -6874,8 +6874,8 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShellInstaller.csproj": {
-              "projectPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShellInstaller.csproj"
+            "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShell.Installer.csproj": {
+              "projectPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellInstaller\\StrayexShell.Installer.csproj"
             },
             "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellWindowsLinuxMac\\StrayexShellWindowsLinuxMac.csproj": {
               "projectPath": "H:\\Daniel\\Repozytoria\\StrayexShell\\dotnet\\StrayexShellWindowsLinuxMac\\StrayexShellWindowsLinuxMac.csproj"
@@ -6915,12 +6915,18 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.0.1, 3.0.1]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

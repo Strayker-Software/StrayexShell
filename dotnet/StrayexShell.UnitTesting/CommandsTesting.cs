@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+    Strayex Shell
+    Copyright © 2019 Daniel Strayker Nowak
+    All rights reserved
+ */
+
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace StrayexShellWindows.UnitTesting

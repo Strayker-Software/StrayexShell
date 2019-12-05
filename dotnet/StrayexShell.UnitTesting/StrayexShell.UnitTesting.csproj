@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StrayexShellInstaller\StrayexShellInstaller.csproj" />
+    <ProjectReference Include="..\StrayexShellInstaller\StrayexShell.Installer.csproj" />
     <ProjectReference Include="..\StrayexShellWindowsLinuxMac\StrayexShellWindowsLinuxMac.csproj" />
   </ItemGroup>
 
