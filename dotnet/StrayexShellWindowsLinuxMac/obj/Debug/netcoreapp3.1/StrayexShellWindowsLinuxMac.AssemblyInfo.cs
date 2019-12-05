@@ -11,13 +11,15 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("StrayexShellWindowsLinuxMac")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Daniel Strayker Nowak")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("StrayexShellWindowsLinuxMac")]
+[assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright © 2019 Daniel Straykern Nowak All rights reserved")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("Strayex Command Line Interface")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.1")]
+[assembly: System.Reflection.AssemblyProductAttribute("Strayex Shell")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StrayexShellWindowsLinuxMac")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.1.0")]
 
 // Wygenerowane przez klasę WriteCodeFragment programu MSBuild.
 

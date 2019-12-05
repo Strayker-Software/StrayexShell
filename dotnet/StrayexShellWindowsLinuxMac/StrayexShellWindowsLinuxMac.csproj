@@ -2,9 +2,21 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <Platforms>AnyCPU;x64</Platforms>
     <StartupObject>StrayexShellWindows.Program</StartupObject>
+    <PackageId>Strayex Shell</PackageId>
+    <Authors>Daniel Strayker Nowak</Authors>
+    <Product>Strayex Shell</Product>
+    <Description>Strayex Command Line Interface</Description>
+    <Copyright>Copyright © 2019 Daniel Straykern Nowak All rights reserved</Copyright>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageProjectUrl>https://straykerpl.github.io/projects/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/StraykerPL/StrayexShell</RepositoryUrl>
+    <RepositoryType>Git VCS</RepositoryType>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,6 +26,10 @@
     <EmbeddedResource Remove="StrayexShellWindows.UnitTesting\**" />
     <None Remove="packages\**" />
     <None Remove="StrayexShellWindows.UnitTesting\**" />
+    <None Include="..\..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

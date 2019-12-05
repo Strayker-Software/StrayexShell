@@ -1,0 +1,10 @@
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\bin\Debug\netcoreapp3.0\StrayexShell.Installer.exe
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\bin\Debug\netcoreapp3.0\StrayexShell.Installer.deps.json
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\bin\Debug\netcoreapp3.0\StrayexShell.Installer.runtimeconfig.json
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\bin\Debug\netcoreapp3.0\StrayexShell.Installer.runtimeconfig.dev.json
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\bin\Debug\netcoreapp3.0\StrayexShell.Installer.dll
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\bin\Debug\netcoreapp3.0\StrayexShell.Installer.pdb
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\obj\Debug\netcoreapp3.0\StrayexShell.Installer.AssemblyInfoInputs.cache
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\obj\Debug\netcoreapp3.0\StrayexShell.Installer.AssemblyInfo.cs
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\obj\Debug\netcoreapp3.0\StrayexShell.Installer.dll
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellInstaller\obj\Debug\netcoreapp3.0\StrayexShell.Installer.pdb

@@ -1,0 +1,11 @@
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellWindowsLinuxMac\bin\Debug\netcoreapp3.0\StrayexShellWindowsLinuxMac.exe
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellWindowsLinuxMac\bin\Debug\netcoreapp3.0\StrayexShellWindowsLinuxMac.deps.json
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellWindowsLinuxMac\bin\Debug\netcoreapp3.0\StrayexShellWindowsLinuxMac.runtimeconfig.json
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellWindowsLinuxMac\bin\Debug\netcoreapp3.0\StrayexShellWindowsLinuxMac.runtimeconfig.dev.json
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellWindowsLinuxMac\bin\Debug\netcoreapp3.0\StrayexShellWindowsLinuxMac.dll
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellWindowsLinuxMac\bin\Debug\netcoreapp3.0\StrayexShellWindowsLinuxMac.pdb
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellWindowsLinuxMac\obj\Debug\netcoreapp3.0\StrayexShellWindowsLinuxMac.csprojAssemblyReference.cache
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellWindowsLinuxMac\obj\Debug\netcoreapp3.0\StrayexShellWindowsLinuxMac.AssemblyInfoInputs.cache
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellWindowsLinuxMac\obj\Debug\netcoreapp3.0\StrayexShellWindowsLinuxMac.AssemblyInfo.cs
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellWindowsLinuxMac\obj\Debug\netcoreapp3.0\StrayexShellWindowsLinuxMac.dll
+H:\Daniel\Repozytoria\StrayexShell\dotnet\StrayexShellWindowsLinuxMac\obj\Debug\netcoreapp3.0\StrayexShellWindowsLinuxMac.pdb
